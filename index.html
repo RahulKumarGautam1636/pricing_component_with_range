@@ -17,7 +17,6 @@
       }
       body {
         font-family: Manrope;
-
       }
       .container {
         height: 100%;
@@ -32,24 +31,23 @@
         flex-direction: column;
       }
       .inner_container {
-        height: 100rem;
+        height: 80rem;
         width: 100%;
         background: #fff;
-        box-shadow:0px 2px 10px 0px rgba(100,100,100,0.5);
         background-image: url("images/bg-pattern.svg");
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        background-size: 100% 60%;
+        background-size: 100% 50%;
         background-repeat: no-repeat;
       }
       .card {
         height: 40rem;
-        max-width: 52rem;
-        width: 90%;
+        width: 52rem;
         background: white;
-        box-shadow:0px 2px 10px 0px rgba(100,100,100,0.2);
+        /* box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px; */
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
         display: flex;
         border: thin;
         justify-content: space-around;
@@ -63,10 +61,10 @@
         background-image: url("images/pattern-circles.svg");
         background-repeat: no-repeat;
         background-position: center;
+        background-size: auto 100%;
         height: 15rem;
         text-align: center;
         width: 100%;
-        margin-top: 5rem;
       }
       .head {
         margin-top: 8rem;
@@ -87,7 +85,10 @@
         justify-content: center;
         text-align: center;
         display: flex;
-        padding-top: 1rem;
+        margin-top: 3rem;
+      }
+      .price {
+        margin-top: 2rem;
       }
       .price p {
         font-size: 1.8rem;
@@ -152,6 +153,10 @@
         justify-content: space-evenly;
         align-items: center;
         margin-bottom: auto;
+        border-bottom: 1px solid hsl(223, 50%, 87%);
+        padding-bottom: 4.5rem;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
       }
       .month {
         display: flex;
@@ -163,16 +168,16 @@
         margin-right: 2rem;
       }
       .billing p {
-        font-size: 80%;
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         color: gray;
       }
-      /* .line {
+      .line {
         height: 1.5rem;
         width: 100%;
         border-bottom: 1px solid red;
-      } */
+      }
       .bottom {
+        height: 4rem;
         width: 100%;
         display: flex;
         flex-direction: row;
@@ -193,16 +198,22 @@
         background: hsl(227, 35%, 25%);
         border: none;
         color: white;
+        font-family: Manrope;
       }
       .checktags {
         display: flex;
         justify-content: space-around;
       }
       .check {
+        height: 210%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        padding-right: 1rem;
+        padding-right: 0.5rem;
+        margin-top: -2rem;
+      }
+      .checktags * {
+        /* border: 1px solid red; */
       }
       .bill-btn {
         background: #ffcfcf;
@@ -261,19 +272,24 @@
           display : none;
       }
       .attribution {
-          text-align: center;
-      } 
+        text-align: center;
+      }
+      .attribution a {
+        text-decoration: none;
+      }
 
-
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 660px) {
   html {
     font-size: 50%;
   }
-
+  .inner_container {
+    height: 106rem;
+  }
   .views {
     order: 1;
     padding-right: 0;
     font-size: 1.7rem;
+    margin-top: 2rem;
   }
   .price {
     order: 3;
@@ -292,17 +308,22 @@
   .billing {
     order: 4;
     justify-content: space-evenly;
-    margin-top: 2rem;
+    margin-top: 3rem;
+    padding-bottom: 6rem;
   }
   .bottom {
     order: 5;
+    height: 22rem;
     position: relative;
     flex-direction: column;
     width: 100%;
     justify-content: space-around;
+
   }
   .card {
-    height: 60rem;
+    height: 77rem;
+    max-width: 65rem;
+    width: 90%;
     justify-content: space-around;
   }
   .month {
@@ -313,16 +334,17 @@
     margin: 1rem;
   }
   .check {
-   justify-content: space-between;
+   height: auto;
+   margin-top: 0;
   }
   .trial {
-    width: 18rem;
-    height: 5rem;
+    width: 24rem;
+    height: 5.9rem;
   }
   .trial-btn {
     width: 100%;
-    height: 11rem;
-    align-items: center;
+    height: 10rem;
+    align-items: flex-end;
     justify-content: center;
   }
   .checktags div {
@@ -332,11 +354,14 @@
     justify-content: center;
     height: 12rem;
   }
+  .billing p {
+    font-size: 1.8rem;
+  }
 
   .tags p {
     margin: 0;
     padding: 0;
-    font-size: 1.8rem;
+    font-size: 1.9rem;
   }
 
 }
@@ -359,7 +384,6 @@
     </style>
   </head>
   <body>
-    <!-- <div class="container"> -->
       <div class="inner_container">
         <div class="heading">
           <h1 class="head">Simple, Traffic-based pricing</h1>
@@ -376,7 +400,7 @@
               <p>Yearly billing</p><button class="bill-btn">25% discount</button>
             </div>
           </div>
-          <!-- <div class="line"></div> -->
+
           <div class="bottom">
             <div class="checktags">
               <div class="check">
@@ -391,18 +415,17 @@
               </div>
             </div>
             <div class="trial-btn">
-              <button class="trial" type="button" name="button">start my trial</button>
+              <button class="trial" type="button" name="button">Start my trial</button>
             </div>
           </div>
         </div>
       </div>
       <div class="attribution">
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-        Coded by <a href="#">Rahul Kumar Gautam</a>.
+        Coded by <a href="https://www.frontendmentor.io/profile/RahulKumarGautam1636">Rahul Kumar Gautam</a>.
       </div>
-    <!-- </div> -->
 
-    <script type="text/javascript">
+    <script>
      const currentViews = document.getElementById("view")
      const currentPrice = document.querySelector(".pricetag");
      const sliderWidth = document.getElementById("rangeBackground");
