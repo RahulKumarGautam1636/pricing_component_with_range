@@ -13,7 +13,7 @@
         box-sizing: border-box;
       }
       html {
-        font-size: 62.5%;
+        font-size: 70.5%;
       }
       body {
         font-family: Manrope;
@@ -29,10 +29,11 @@
         align-items: center;
         padding-top: 15rem;
         padding-bottom: 15rem;
+        flex-direction: column;
       }
       .inner_container {
-        height: 70rem;
-        width: 100rem;
+        height: 100vh;
+        width: 100%;
         background: #fff;
         box-shadow:0px 2px 10px 0px rgba(100,100,100,0.5);
         background-image: url("images/bg-pattern.svg");
@@ -40,13 +41,13 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        border: 1px solid black;
         background-size: 100% 60%;
         background-repeat: no-repeat;
       }
       .card {
         height: 40rem;
-        width: 52rem;
+        max-width: 52rem;
+        width: 90%;
         background: white;
         box-shadow:0px 2px 10px 0px rgba(100,100,100,0.2);
         display: flex;
@@ -55,19 +56,24 @@
         flex-direction: row;
         flex-wrap: wrap;
         align-items: center;
-        margin-top: 3rem;
+        margin-top: 5rem;
+        border-radius: 8px;
       }
       .heading {
         background-image: url("images/pattern-circles.svg");
         background-repeat: no-repeat;
         background-position: center;
         height: 15rem;
+        text-align: center;
+        width: 100%;
+        margin-top: 5rem;
       }
       .head {
-        font-size: 2.8rem;
-        padding-top: 6.5rem;
+        margin-top: 8rem;
         color: hsl(227, 35%, 25%);
         line-height: 5rem;
+        font-size: 2.7rem;
+        word-spacing: 4px;
       }
       .sign-up {
         color: gray;
@@ -124,6 +130,7 @@
         width: 100%;
         cursor: pointer;
         outline: none;
+        margin-top: -1px;
       }
       #setRange[type='range']::-webkit-slider-thumb {
         -webkit-appearance: none !important;
@@ -160,6 +167,11 @@
         font-size: 1.5rem;
         color: gray;
       }
+      /* .line {
+        height: 1.5rem;
+        width: 100%;
+        border-bottom: 1px solid red;
+      } */
       .bottom {
         width: 100%;
         display: flex;
@@ -176,7 +188,7 @@
       }
       .trial {
         width: 12rem;
-        height: 35px;
+        height: 3.5rem;
         border-radius: 20px;
         background: hsl(227, 35%, 25%);
         border: none;
@@ -254,10 +266,7 @@
   html {
     font-size: 50%;
   }
-  .container {
-    height: 100%;
-    width: 100%;
-  }
+
   .views {
     order: 1;
     padding-right: 0;
@@ -274,8 +283,8 @@
   }
   .range {
     order: 2;
-    margin-top: 4rem;
-    margin-bottom: 5rem;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
   }
   .billing {
     order: 4;
@@ -284,19 +293,14 @@
   }
   .bottom {
     order: 5;
-    margin-top: 2rem;
     position: relative;
     flex-direction: column;
     width: 100%;
     justify-content: space-around;
   }
   .card {
-    height: 120%;
+    height: 60rem;
     justify-content: space-around;
-  }
-  .sign-up {
-    padding-left: 16rem;
-    padding-right: 16rem;
   }
   .month {
     margin-right: 0;
@@ -309,17 +313,21 @@
    justify-content: space-between;
   }
   .trial {
-    width: 100px;
-    margin-bottom: 2rem;
+    width: 18rem;
+    height: 5rem;
   }
   .trial-btn {
     width: 100%;
-    height: 10rem;
-    align-items: flex-end;
+    height: 11rem;
+    align-items: center;
     justify-content: center;
+  }
+  .checktags div {
+    justify-content: space-evenly;
   }
   .checktags {
     justify-content: center;
+    height: 12rem;
   }
 
   .tags p {
@@ -329,22 +337,26 @@
   }
 
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 420px) {
+  html {
+    font-size: 45%;
+  }
+}
+@media only screen and (max-width: 380px) {
   html {
     font-size: 40%;
   }
-
-  .container {
-    height: 120%;
-    width: 100%;
+}
+@media only screen and (max-width: 350px) {
+  html {
+    font-size: 35%;
   }
-
 }
 
     </style>
   </head>
   <body>
-    <div class="container">
+    <!-- <div class="container"> -->
       <div class="inner_container">
         <div class="heading">
           <h1 class="head">Simple, Traffic-based pricing</h1>
@@ -361,6 +373,7 @@
               <p>Yearly billing</p><button class="bill-btn">25% discount</button>
             </div>
           </div>
+          <!-- <div class="line"></div> -->
           <div class="bottom">
             <div class="checktags">
               <div class="check">
@@ -379,12 +392,12 @@
             </div>
           </div>
         </div>
-        <div class="attribution">
-          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-          Coded by <a href="#">Rahul Kumar Gautam</a>.
-        </div>
       </div>
-    </div>
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="#">Rahul Kumar Gautam</a>.
+      </div>
+    <!-- </div> -->
 
     <script type="text/javascript">
      const currentViews = document.getElementById("view")
